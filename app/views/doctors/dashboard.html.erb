@@ -1,9 +1,33 @@
-<h1>Doctors#dashboard</h1>
 <p>Find me in app/views/doctors/dashboard.html.erb</p>
 <h1>Doctor's Dashboard</h1>
 
-<h2>Patient Registration Over Time</h2>
-<%= line_chart @patient_registration_data, xtitle: 'Days', ytitle: 'Patients' %>
+<div id="patient_chart"></div>
+<%= @patient_registration_data.inspect %> <!-- To check the data structure -->
+
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Date', 'Patients'],
+      <% @patient_registration_data.each do |date, count| %>
+        ['<%= date %>', <%= count %>],
+      <% end %>
+    ]);
+
+    var options = {
+      title: 'Patient Registration Over Time',
+      hAxis: { title: 'Date' },
+      vAxis: { title: 'Patients' },
+      curveType: 'function',
+      legend: { position: 'bottom' }
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('patient_chart'));
+    chart.draw(data, options);
+  }
+</script>
 <%= @patient_registration_data.inspect %> <!-- To check the data structure -->
 
 <h2>List of All Patients</h2>

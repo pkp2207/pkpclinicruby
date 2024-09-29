@@ -1,2 +1,4 @@
 class Role < ApplicationRecord
-end
+    has_many :users
+  end
+  
