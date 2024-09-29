@@ -31,4 +31,91 @@
   th {
     background-color: #f2f2f2;
   }
-  
+  /* Basic reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif; /* You can use any font of your choice */
+  background-color: #f9f9f9; /* Light background for contrast */
+  color: #333; /* Dark text color for readability */
+  line-height: 1.6;
+}
+
+/* Center the form container */
+.form-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 100vh; /* Full viewport height */
+  padding: 20px;
+}
+
+form {
+  background-color: #ffffff; /* White background for the form */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px; /* Padding inside the form */
+  width: 100%; /* Full width on smaller screens */
+  max-width: 400px; /* Max width for larger screens */
+}
+
+h1 {
+  text-align: center; /* Center the header */
+  margin-bottom: 20px; /* Spacing below the header */
+}
+
+/* Form fields */
+.field {
+  margin-bottom: 15px; /* Spacing between fields */
+}
+
+label {
+  display: block; /* Labels on their own line */
+  margin-bottom: 5px; /* Spacing between label and input */
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+  width: 100%; /* Full width for inputs */
+  padding: 10px; /* Inner padding */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Slightly rounded corners */
+  font-size: 16px; /* Font size */
+}
+
+/* Submit button styling */
+.actions {
+  text-align: center; /* Center the buttons */
+}
+
+input[type="submit"],
+button {
+  background-color: #007bff; /* Primary button color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px 15px; /* Padding */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Error messages */
+#error_explanation {
+  background-color: #f8d7da; /* Light red background for errors */
+  color: #721c24; /* Dark red text */
+  padding: 10px; /* Padding inside the error message */
+  border-radius: 4px; /* Rounded corners */
+  margin-bottom: 20px; /* Spacing below error message */
+}
