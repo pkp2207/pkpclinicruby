@@ -119,3 +119,10 @@ button:hover {
   border-radius: 4px; /* Rounded corners */
   margin-bottom: 20px; /* Spacing below error message */
 }
+.btn-danger {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-decoration: none;
+}
