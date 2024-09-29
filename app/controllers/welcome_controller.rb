@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
   
     def manifest
       render json: {
-        "short_name": "ClinicApp",
+        "short_name": "PKPClinicRuby",
         "name": "Clinic Application",
         "icons": [
           {

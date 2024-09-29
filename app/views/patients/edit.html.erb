@@ -1,5 +1,5 @@
 <div class="form-container">
-  <h1>Edit Patient</h1>
+  <div class='SignUpForm'>  <h1>Edit Patient</h1>
   <%= form_with(model: @patient, local: true) do |form| %>
     <% if @patient.errors.any? %>
       <div id="error_explanation">
@@ -38,4 +38,5 @@
   <% end %>
 
   <%= button_to "Delete Patient", patient_path(@patient), method: :delete, data: { confirm: "Are you sure you want to delete this patient?" } %>
+</div>
 </div>

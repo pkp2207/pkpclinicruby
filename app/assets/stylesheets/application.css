@@ -1,37 +1,25 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
- table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  table, th, td {
-    border: 1px solid black;
-  }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  /* Basic reset */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+/* Basic reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -50,7 +38,7 @@ body {
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  min-height: 100vh; /* Full viewport height */
+  min-height: 60vh; /* Full viewport height */
   padding: 20px;
 }
 
@@ -98,7 +86,6 @@ input[type="submit"],
 button {
   background-color: #007bff; /* Primary button color */
   color: white; /* Text color */
-  border: none; /* No border */
   border-radius: 4px; /* Rounded corners */
   padding: 10px 15px; /* Padding */
   font-size: 16px; /* Font size */
@@ -125,4 +112,56 @@ button:hover {
   border: none;
   padding: 10px 20px;
   text-decoration: none;
+}
+
+.homepage-buttons {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center buttons horizontally */
+  align-items: center; /* Align items vertically in the center */
+  gap: 20px; /* Space between buttons */
+  margin-top: 40px; /* Space above the buttons */
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 10px 20px; /* Button padding */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  color: white; /* Text color */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Primary button color */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.btn-secondary {
+  background-color: #6c757d; /* Secondary button color */
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268; /* Darker shade on hover */
+}
+.SignUpForm {
+  width: 400px;
+  margin: 0 auto;
+  align-items: center;
+}
+.form-container2 {
+  display: flex;                 /* Use flexbox for layout */
+  flex-direction: column;       /* Stack children vertically */
+  justify-content: flex-start;  /* Align items to the start */
+  padding: 20px;                /* Add some padding */
+  background-color: #f9f9f9;    /* Background color */
+}
+
+.form-container2 .logout-button {
+  align-self: flex-end;         /* Align the button to the right */
+  margin-top: 0px;             /* Optional spacing above the button */
 }

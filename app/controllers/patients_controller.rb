@@ -40,7 +40,46 @@ class PatientsController < ApplicationController
   def dashboard
     @patients = Patient.all
     @patient = Patient.new  # Initialize a new patient object for the form
+  
+    # Initialize age groups with default values
+    @age_groups = {
+      '0-5' => 0,
+      '6-15' => 0,
+      '16-25' => 0,
+      '26-40' => 0,
+      '41-60' => 0,
+      '60+' => 0
+    }
+  
+    # Populate age groups based on patient data
+    @patients.each do |patient|
+      age = calculate_age(patient.dob)  # Assume you have a method to calculate age
+      case age
+      when 0..5
+        @age_groups['0-5'] += 1
+      when 6..15
+        @age_groups['6-15'] += 1
+      when 16..25
+        @age_groups['16-25'] += 1
+      when 26..40
+        @age_groups['26-40'] += 1
+      when 41..60
+        @age_groups['41-60'] += 1
+      else
+        @age_groups['60+'] += 1
+      end
+    end
   end
+  
+  private
+  
+  def calculate_age(dob)
+    return 0 unless dob  # Handle nil date of birth
+    ((Time.zone.now - dob) / 1.year.seconds).to_i
+  end
+  
+  
+  
 
   private
 
