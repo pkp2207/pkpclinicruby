@@ -7,10 +7,9 @@ Rails.application.routes.draw do
   get '/manifest.json', to: 'home#manifest'
 
   resources :patients do
+    # Removed the separate edit route; it's handled by the resources block
     member do
-      get 'edit', to: 'patients#edit'
-      patch 'update', to: 'patients#update'
-      delete 'destroy', to: 'patients#destroy'
+      delete 'destroy', to: 'patients#destroy'  # Keep destroy route for DELETE
     end
   end
   
@@ -20,6 +19,7 @@ Rails.application.routes.draw do
     get 'receptionist/new_patient', action: :new_patient, as: :new_patient_receptionists
     post 'receptionist/create_patient', action: :create_patient, as: :create_patient_receptionists
   end
+
   # Doctor routes
   get 'doctor/dashboard', to: 'doctors#dashboard'
 end
