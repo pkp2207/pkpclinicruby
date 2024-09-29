@@ -14,7 +14,8 @@ class DoctorsController < ApplicationController
   private
 
   # Ensure the user is a doctor
-  def require_doctor
-    redirect_to root_path unless current_user.role == 'doctor'
-  end
+    def require_doctor
+      Rails.logger.debug "Current user: #{current_user.inspect}"
+      redirect_to root_path unless current_user.role.name == 'doctor'
+    end
 end

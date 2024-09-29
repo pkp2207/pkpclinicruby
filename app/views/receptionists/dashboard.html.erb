@@ -1,2 +1,40 @@
 <h1>Receptionists#dashboard</h1>
 <p>Find me in app/views/receptionists/dashboard.html.erb</p>
+
+<h2>Register a New Patient</h2>
+<%= form_with(model: @patient, url: create_patient_receptionists_path, local: true) do |form| %>
+  <% if @patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+      <ul>
+        <% @patient.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+  
+  <div>
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= form.label :dob %>
+    <%= form.date_select :dob, start_year: 1930, end_year: Time.current.year %>
+  </div>
+
+  <div>
+    <%= form.label :address %>
+    <%= form.text_area :address %>
+  </div>
+
+  <div>
+    <%= form.submit "Register Patient" %>
+  </div>
+<% end %>
